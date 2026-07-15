@@ -24,7 +24,7 @@
 
 #include "font.h"
 
-extern const uint8_t font_ascii_table[][FONT_WIDTH];
+extern const unsigned char font_ascii_table[][FONT_WIDTH];
 
 static unsigned char font_map_char(char character)
 {
@@ -58,17 +58,17 @@ static unsigned char font_map_char(char character)
  */
 void font_get_bitmap(char character, unsigned char *bitmap)
 {
-    unsigned char character = font_map_char(character);
-
+    character = font_map_char(character);
+	
     for (unsigned char i=0; i < sizeof(font_ascii_table[0])/sizeof(font_ascii_table[0][0]); i++)
 	{
 		#ifdef FONT_STORE_IN_EEPROM
-			bitmap[i] = eeprom_read_byte(&font_ascii_table[character][i]);
+			bitmap[i] = eeprom_read_byte(&font_ascii_table[(unsigned char)character][i]);
 		#else
 			#ifdef FONT_STORE_IN_PROGMEM
-				bitmap[i] = pgm_read_byte(&font_ascii_table[character][i]);
+				bitmap[i] = pgm_read_byte(&font_ascii_table[(unsigned char)character][i]);
 			#else
-				bitmap[i] = font_ascii_table[character][i];
+				bitmap[i] = font_ascii_table[(unsigned char)character][i];
 			#endif
 		#endif
 	}
