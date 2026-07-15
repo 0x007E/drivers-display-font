@@ -8,6 +8,8 @@ These font set(s) is/are a generic set of `ASCII` characters that can be used on
 
 ## File Structure
 
+![File Structure](https://blog.sunriax.at/drivers-display-font/font_8h__dep__incl.png)
+
 ```
 drivers/
 └── display/
