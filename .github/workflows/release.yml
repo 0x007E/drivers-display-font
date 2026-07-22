@@ -22,7 +22,8 @@ jobs:
           cp -r ./font.c ./${{ env.OUTPUT_FOLDER }}/drivers/display/font/
           cp -r ./font.h ./${{ env.OUTPUT_FOLDER }}/drivers/display/font/
           cp -r ./fonts/font_5x7_ascii.c ./${{ env.OUTPUT_FOLDER }}/drivers/display/font/fonts/
-          cp -r ./LICENSE  ./${{ env.OUTPUT_FOLDER }}/LICENSE
+
+          cp -r ./LICENSE ./${{ env.OUTPUT_FOLDER }}/
 
       - name: Upload library package
         uses: actions/upload-artifact@v7
@@ -63,7 +64,7 @@ jobs:
             zip -r ./${{ env.FILENAME }}.zip ./${{ env.FILENAME }}
             cd ..
 
-      - name: Upload KiCAD Files
+      - name: Upload files
         run: |
           gh release upload ${{ github.ref_name }} \
             ./artifact/${{ env.FILENAME }}.tar.gz \

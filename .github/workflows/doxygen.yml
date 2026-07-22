@@ -29,9 +29,9 @@ jobs:
       - name: Prepare files for Doxygen
         run: |
           mkdir -p ./structure/drivers/display/font/fonts
-          cp ./font.c ./structure/drivers/display/font/
-          cp ./font.h ./structure/drivers/display/font/
-          cp ./fonts/font_5x7_ascii.c ./structure/drivers/display/font/fonts/
+          cp -r ./font.c ./structure/drivers/display/font/
+          cp -r ./font.h ./structure/drivers/display/font/
+          cp -r ./fonts/font_5x7_ascii.c ./structure/drivers/display/font/fonts/
       
       - name: Setup Pages
         id: pages
