@@ -19,6 +19,47 @@
 #ifndef FONT_H_
 #define FONT_H_
 	
+	#ifndef FONT_TYPE
+		/**
+		 * @def FONT_TYPE
+		 * @brief Defines the type of the font that is being used.
+		 * 
+		 * @details
+		 * This macro sets the type of the font, such as FONT_5X7_ASCII. It is used to identify the font type for rendering and bitmap retrieval.
+		 * 
+		 * @note The default font type is FONT_5X7_ASCII, which supports standard ASCII characters.
+		 * 
+		 * The maximum font size is undef x 8 pixels (width x length), and the minimum font size is 1x1 pixel. The font type can be changed by defining this macro before including this header file.
+		 * 
+		 * ```
+		 * -  | - LENGTH -  |
+		 * |  # # # # # # # #
+		 * W  # # # # # # # #
+		 * I  # # # # # # # #
+		 * D  # # # # # # # #
+		 * T  # # # # # # # #
+		 * H  # # # # # # # #
+		 * |  # # # # # # # #
+		 * -
+		 * ```
+		 * 
+		 * The start address is at ARRAY[0] -> Bit 0,0 (top left corner).
+		 * 
+		 * Example (Character B):
+		 * 
+		 * ```
+		 * -  | - LENGTH -  |
+		 * |  1 1 1 1 1 1 1 1
+		 * W  1 0 0 0 1 0 0 1
+		 * D  1 0 0 0 1 0 0 1
+		 * T  1 0 0 0 1 0 0 1
+		 * H  0 1 1 1 0 1 1 0
+		 * -
+		 * ```
+		 */
+		#define FONT_TYPE FONT_5X7_ASCII
+	#endif
+	
 	#ifndef FONT_WIDTH
 		/**
 		 * @def FONT_WIDTH
