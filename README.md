@@ -22,6 +22,33 @@ drivers/
 
 > With the macros in `font.h` the storage area and character size can be defined.
 
+If there are different fonts availabe, it is possible to select the font by defining the `FONT_TYPE` in `font.h`. Note that the maximum font size is `undef` x `8` pixels (`width` x `length`), and the minimum font size is `1` x `1` pixel.
+
+```
+-  | - LENGTH -  |
+|  # # # # # # # #
+W  # # # # # # # #
+I  # # # # # # # #
+D  # # # # # # # #
+T  # # # # # # # #
+H  # # # # # # # #
+|  # # # # # # # #
+-
+```
+
+The start address is at `ARRAY[0]` -> `Bit[0]` (top left corner on the display).
+Example (Character B):
+
+```
+-  | - LENGTH -  |
+|  1 1 1 1 1 1 1 1
+W  1 0 0 0 1 0 0 1
+D  1 0 0 0 1 0 0 1
+T  1 0 0 0 1 0 0 1
+|  0 1 1 1 0 1 1 0
+-
+```
+
 ## Downloads
 
 The font can be downloaded as (`zip` or `tar`), cloned or used as submodule in a project.
