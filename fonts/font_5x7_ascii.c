@@ -24,7 +24,7 @@
 
 #include "../font.h"
 
-#ifdef FONT_5X7_ASCII
+#if FONT_TYPE == FONT_5X7_ASCII
 	#ifdef FONT_STORE_IN_EEPROM
 		const unsigned char font_ascii_table[][FONT_WIDTH] EEMEM = {
 	#else 
