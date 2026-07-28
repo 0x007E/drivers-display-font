@@ -62,7 +62,7 @@ The font can be downloaded as (`zip` or `tar`), cloned or used as submodule in a
 ```sh
 mkdir -p ./drivers/display
 git clone https://github.com/0x007E/drivers-display-font.git ./drivers/display
-mv ./drivers-display-font                                    ./drivers/display/font
+mv ./drivers/display/drivers-display-font                    ./drivers/display/font
 ```
 
 ### Using as `git submodule`
